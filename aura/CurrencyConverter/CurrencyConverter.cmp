@@ -1,0 +1,70 @@
+<aura:component implements="force:appHostable,force:hasRecordId,forceCommunity:availableForAllPageTypes,flexipage:availableForRecordHome" controller="CurrencyConverterController" access="global" >
+    <!-- ATTRIBUTES SECTION -->
+    <aura:attribute name="currencyList" type="String[]" default="['INR', 'AUD', 'BGN', 'BRL', 'CAD', 'CHF', 'CNY', 'CZK', 'DKK', 'GBP', 'HKD', 'HRK', 'HUF', 'IDR', 'ILS', 'JPY', 'KRW', 'MXN', 'MYR', 'NOK', 'NZD', 'PHP', 'PLN', 'RON', 'RUB', 'SEK', 'SGD', 'THB', 'TRY', 'USD', 'ZAR', 'EUR']" />
+    <aura:attribute name="selectedFromCurrency" type="String" />
+    <aura:attribute name="selectedToCurrency" type="String" />
+    <aura:attribute name="inputFromCurrency" type="Decimal" />
+    <aura:attribute name="inputToCurrency" type="Decimal" />
+    <aura:attribute name="selectedExchangeRate" type="Decimal" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <lightning:spinner aura:id="mySpinner" />
+    
+    <aura:if isTrue="{!v.selectedExchangeRate == -1}">
+        <div class="slds-box slds-m-around_xx-small" style="background-color: #f7f9fb;">
+            <div class="slds-media">
+                <div class="slds-media__figure">
+                    <span class="slds-avatar slds-avatar_large">
+                        <lightning:icon iconName="standard:entitlement_process" size="large" />
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                    <div class="slds-text-heading_small">
+                        <p>Missing few BYTES. Please reload the page. If the error still persists, contact <a href="mailto:pranav.raulkar@accenture.com">Pranav Raulkar</a>.</p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <aura:set attribute="else">
+            <div class="slds-box slds-m-around_xx-small" style="background-color: #f7f9fb;">   
+                <div class="slds-text-heading_small">
+                    1 {!v.selectedFromCurrency} equals
+                </div>
+                <div class="slds-text-heading_large">
+                    <b>{!v.selectedExchangeRate}&nbsp;{!v.selectedToCurrency}</b>
+                </div>
+                
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-m-vertical_small slds-size_2-of-3 slds-medium-size_4-of-6 slds-large-size_8-of-12">
+                        <ui:inputCurrency class="slds-input" aura:id="from" value="{!v.inputFromCurrency}" format="0.00" keyup="{!c.onInputFromCurrencyChange}" updateOn="keyup" />
+                    </div>
+                    <div class="slds-m-vertical_small slds-size_1-of-3 slds-medium-size_2-of-6 slds-large-size_4-of-12">
+                        <ui:inputSelect class="slds-input slds-m-left_x-small" value="{!v.selectedFromCurrency}" change="{!c.onSelectFromCurrencyChange}" updateOn="change">
+                            <aura:iteration items="{!v.currencyList}" var="currency">
+                                <ui:inputSelectOption text="{!currency}" label="{!currency}" />
+                            </aura:iteration>
+                        </ui:inputSelect>
+                    </div>
+                </div>
+                
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-m-vertical_small slds-size_2-of-3 slds-medium-size_4-of-6 slds-large-size_8-of-12">
+                        <ui:inputCurrency class="slds-input" aura:id="to" value="{!v.inputToCurrency}" format="0.00" keyup="{!c.onInputToCurrencyChange}" updateOn="keyup" />
+                    </div>
+                    <div class="slds-m-vertical_small slds-size_1-of-3 slds-medium-size_2-of-6 slds-large-size_4-of-12">
+                        <ui:inputSelect class="slds-input slds-m-left_x-small" value="{!v.selectedToCurrency}" change="{!c.onSelectToCurrencyChange}" updateOn="change">
+                            <aura:iteration items="{!v.currencyList}" var="currency">
+                                <ui:inputSelectOption text="{!currency}" label="{!currency}" />
+                            </aura:iteration>
+                        </ui:inputSelect>
+                    </div>
+                </div>
+                
+                <div class="slds-text-align_center slds-text-title slds-m-top_xx-small">
+                    The reference rates are usually updated around 15:00 GMT (16:00 CET) on every working day.
+                </div>
+            </div>
+        </aura:set>
+    </aura:if>
+</aura:component>
