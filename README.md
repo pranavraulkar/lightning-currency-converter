@@ -32,8 +32,8 @@ An c:CurrencyConverter creates an currency conversion component that allows you 
 ## Screenshots
 ### Fig 1: Setup:
 
-![Fig 1: Setup:](https://github.com/pranavraulkar/lightning-autocomplete/blob/master/screenshots/autocomplete_setup.png)
+![Fig 1: Setup:](https://github.com/pranavraulkar/lightning-currencyconverter/blob/master/screenshots/currencyconverter_setup.png)
 
 ### Fig 2: Working:
 
-![Fig 2: Working:](https://github.com/pranavraulkar/lightning-autocomplete/blob/master/screenshots/autocomplete_working.png)
+![Fig 2: Working:](https://github.com/pranavraulkar/lightning-currencyconverter/blob/master/screenshots/currencyconverter_working.png)
