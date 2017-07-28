@@ -1,12 +1,17 @@
+<!--
+	@author			Pranav Raulkar (pranavraulkar@gmail.com)
+	@description 	The currency conversion component.
+-->
 <aura:component implements="force:appHostable,force:hasRecordId,forceCommunity:availableForAllPageTypes,flexipage:availableForRecordHome" controller="CurrencyConverterController" access="global" >
-    <!-- ATTRIBUTES SECTION -->
+    <!-- COMPONENT ATTRIBUTE SECTION -->
     <aura:attribute name="currencyList" type="String[]" default="['INR', 'AUD', 'BGN', 'BRL', 'CAD', 'CHF', 'CNY', 'CZK', 'DKK', 'GBP', 'HKD', 'HRK', 'HUF', 'IDR', 'ILS', 'JPY', 'KRW', 'MXN', 'MYR', 'NOK', 'NZD', 'PHP', 'PLN', 'RON', 'RUB', 'SEK', 'SGD', 'THB', 'TRY', 'USD', 'ZAR', 'EUR']" />
-    <aura:attribute name="selectedFromCurrency" type="String" />
-    <aura:attribute name="selectedToCurrency" type="String" />
+    <aura:attribute name="selectedFromCurrency" type="String" required="true" default="INR" description="Currency from which to convert from." />
+    <aura:attribute name="selectedToCurrency" type="String" required="true" default="USD" description="Currency from which to convert to." />
     <aura:attribute name="inputFromCurrency" type="Decimal" />
     <aura:attribute name="inputToCurrency" type="Decimal" />
     <aura:attribute name="selectedExchangeRate" type="Decimal" />
     
+    <!-- COMPONENT HANDLER SECTION -->
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
     
     <lightning:spinner aura:id="mySpinner" />

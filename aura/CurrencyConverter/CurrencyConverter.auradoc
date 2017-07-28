@@ -1,0 +1,5 @@
+<aura:documentation>
+	<aura:description>
+        An c:CurrencyConverter creates a currency conversion component that allows you to convert to and from multiple currencies as you type. The conversion rates are based on currenct exchange rates that are updated daily 16:00 CET.
+    </aura:description>
+</aura:documentation>

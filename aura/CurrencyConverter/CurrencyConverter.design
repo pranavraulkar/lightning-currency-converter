@@ -1,4 +1,4 @@
 <design:component >
-    <design:attribute name="selectedFromCurrency" label="From Currency" default="INR" datasource="INR, AUD, BGN, BRL, CAD, CHF, CNY, CZK, DKK, GBP, HKD, HRK, HUF, IDR, ILS, JPY, KRW, MXN, MYR, NOK, NZD, PHP, PLN, RON, RUB, SEK, SGD, THB, TRY, USD, ZAR, EUR" description="Default ticker value for from currency." />
-    <design:attribute name="selectedToCurrency" label="To Currency" default="USD" datasource="INR, AUD, BGN, BRL, CAD, CHF, CNY, CZK, DKK, GBP, HKD, HRK, HUF, IDR, ILS, JPY, KRW, MXN, MYR, NOK, NZD, PHP, PLN, RON, RUB, SEK, SGD, THB, TRY, USD, ZAR, EUR" description="Default ticker value for to currency." />
+    <design:attribute name="selectedFromCurrency" label="From Currency" description="Currency from which to convert from." default="INR" datasource="INR, AUD, BGN, BRL, CAD, CHF, CNY, CZK, DKK, GBP, HKD, HRK, HUF, IDR, ILS, JPY, KRW, MXN, MYR, NOK, NZD, PHP, PLN, RON, RUB, SEK, SGD, THB, TRY, USD, ZAR, EUR" />
+    <design:attribute name="selectedToCurrency" label="To Currency" description="Currency from which to convert to." default="USD" datasource="INR, AUD, BGN, BRL, CAD, CHF, CNY, CZK, DKK, GBP, HKD, HRK, HUF, IDR, ILS, JPY, KRW, MXN, MYR, NOK, NZD, PHP, PLN, RON, RUB, SEK, SGD, THB, TRY, USD, ZAR, EUR" />
 </design:component>
