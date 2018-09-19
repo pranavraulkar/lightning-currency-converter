@@ -20,7 +20,7 @@ An c:CurrencyConverter creates an currency conversion component that allows you 
 
 ## Features
 * Simple, Elegant and Responsive UI.
-* On the fly currncy conversion, as you type.
+* On the fly currency conversion (as you type).
 
 ## To-Do
 * Add more currency support.
